@@ -1,4 +1,4 @@
-package com.mybatis.po;
+package com.mybatistest.dto;
 
 import lombok.Data;
 

@@ -2,27 +2,24 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <typeAliases><!--别名-->
-        <typeAlias alias="role" type="com.mybatis.po.Role"/>
+    <properties resource="jdbc.properties"/>
+    <typeAliases>
+        <!--别名-->
+        <typeAlias alias="role" type="com.mybatistest.dto.Role"/>
     </typeAliases>
-    <!-- 数据库环境 -->
     <environments default="development">
         <environment id="development">
-            <!-- 使用JDBC的事务管理 -->
             <transactionManager type="JDBC" />
             <dataSource type="POOLED">
-                <!-- MySQL数据库驱动 -->
-                <property name="driver" value="com.mysql.jdbc.Driver" />
-                <!-- 连接数据库的URL -->
-                <property name="url"
-                          value="jdbc:mysql://119.3.104.212:3306/mysqltest?characterEncoding=utf8" />
-                <property name="username" value="root" />
-                <property name="password" value="root" />
+                <property name="driver" value="${driver}" />
+                <property name="url" value="${url}" />
+                <property name="username" value="${username}" />
+                <property name="password" value="${password}" />
             </dataSource>
         </environment>
     </environments>
     <!-- 将mapper文件加入到配置文件中 -->
     <mappers>
-        <mapper class="com.mybatis.mapper.RoleMapper" />
+        <mapper resource="mapper/RoleMapper.xml"/>
     </mappers>
 </configuration>

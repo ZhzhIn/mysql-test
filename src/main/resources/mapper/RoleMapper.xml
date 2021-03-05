@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatistest.dao.RoleMapper">
+    <!--RoleMapper用来生成Mapper，命名空间指定了接口-->
+    <select id="getRole" parameterType="java.lang.Integer" resultType="role">
+        <!--列别名和pojo属性一致，Mybatis会将语句查询结果自动映射到我们需要的pojo上-->
+        <!--通过SqlSession来获取Mapper-->
+        SELECT id,role_name as roleName,note FROM role WHERE id =#{id}
+    </select>
+</mapper>
