@@ -10,7 +10,8 @@ import org.junit.jupiter.api.Test;
 @Slf4j
 public class RoleController {
     SqlSession sqlSession = null;
-
+//    SqlSession sqlSession = null;
+//    SqlSession sqlSession = null;
     public Role selectRole(int id) {
         try {
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
